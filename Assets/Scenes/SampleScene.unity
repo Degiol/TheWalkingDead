@@ -438,6 +438,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 7, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 3, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -478,6 +488,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 437ff12e48040ce4ca19b8323cfb56dd, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 743a45a3dddd1e5439cc48e8280cce5e, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 1590d2f23059fd4408881e46a9be78ac, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 24617588ba7b3e84983ed093a9cb4a59, type: 3}
@@ -487,8 +499,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 591149f0258667f40849b5077290eb20, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: aa4b7d9bd3effff4da2974befa2f3e52, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: bb9a9542f78db7e409a25d5ab7d79ff4, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data:
       e00: 1
       e01: 0
@@ -507,13 +521,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -8, y: -3, z: 0}
-  m_Size: {x: 14, y: 6, z: 1}
+  m_Size: {x: 16, y: 6, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -549,7 +563,7 @@ GameObject:
   - component: {fileID: 1358515830}
   m_Layer: 0
   m_Name: Plataformas
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1464,6 +1478,7 @@ GameObject:
   - component: {fileID: 1699159867}
   - component: {fileID: 1699159870}
   - component: {fileID: 1699159871}
+  - component: {fileID: 1699159872}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -1487,11 +1502,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 228eb7684e7e8534f97d27918a5d9c62, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1699159868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1598,3 +1613,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 6.96
+  potenciaSalto: 380
+--- !u!95 &1699159872
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699159866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5567fcd3f84bf641a9c581fe5415578, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
