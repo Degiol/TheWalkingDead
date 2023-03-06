@@ -8,6 +8,7 @@ public class Personaje : MonoBehaviour
     [Range(1,10)]public float velocidad;
     Rigidbody2D rigidbody2;
     SpriteRenderer spriteRenderer;
+    private int vida = 3;
 
     //Animator
     private Animator animator;
@@ -64,5 +65,9 @@ public class Personaje : MonoBehaviour
         isJumping=false;
 
         rigidbody2.velocity=new Vector2 (rigidbody2.velocity.x, 0);
+    }
+    public void QuitarVida()
+    {
+        vida -= 1;
     }
 }
