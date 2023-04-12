@@ -10,6 +10,11 @@ public class Personaje : MonoBehaviour
     SpriteRenderer spriteRenderer;
     private int vida = 3;
 
+    //control joystick
+    public Joystick joystick;
+    float movimientoH;
+    float movimientoV;
+
     //Animator
     private Animator animator;
 
@@ -35,7 +40,19 @@ public class Personaje : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float movimientoH = Input.GetAxisRaw("Horizontal");
+        //movimiento sin joystick
+        //float movimientoH = Input.GetAxisRaw("Horizontal");
+
+        if((joystick.Horizontal >= .2f) | (joystick.Horizontal <= .2f))
+        {
+            movimientoH = joystick.Horizontal;
+        }
+        else
+        {
+            movimientoH = 0;
+        }
+        movimientoV=joystick.Vertical;
+
         rigidbody2.velocity=new Vector2 (movimientoH*velocidad, rigidbody2.velocity.y);
         if (movimientoH < 0)
         {
@@ -49,7 +66,9 @@ public class Personaje : MonoBehaviour
             animator.SetBool("isWalking", true);
         }else
             animator.SetBool("isWalking", false);
-        if(Input.GetButton("Jump") && !isJumping)
+        //Sin joystick
+        //if(Input.GetButton("Jump") && !isJumping)
+        if(movimientoV >=.5f && !isJumping)
         {
             rigidbody2.AddForce(Vector2.up * potenciaSalto);
             isJumping = true;
@@ -69,5 +88,10 @@ public class Personaje : MonoBehaviour
     public void QuitarVida()
     {
         vida -= 1;
+    }
+    public void accionBoton()
+    {
+        rigidbody2.AddForce(Vector2.up * potenciaSalto);
+        isJumping = true;
     }
 }
